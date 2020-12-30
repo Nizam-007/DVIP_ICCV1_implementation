@@ -42,6 +42,8 @@ YOLOv3: /darknet/cfg/kitti6-yolov3.cfg (https://github.com/yizhou-wang/darknet-k
 ## Details of configurations
 Open the configuration file yolovX-voc.cfg and change the following parameters:
 
+```python
+
 [net]
 #### Training
 batch=64
@@ -60,8 +62,7 @@ filters=55
 ### do the same thing for the 3 yolo layers
 [convolutional]
 filters=33
-
-
+```
 
 ## Evaluation results
 For object detection, people often use a metric called mean average precision (mAP) to evaluate the performance of a detection algorithm. mAP is defined as the average of the maximum precision at different recall values.  I also count the time consumption for each detection algorithms. Note that the KITTI evaluation tool only cares about object detectors for the classes Car, Pedestrian, and Cyclist but do not count Van, etc. as false positives for cars.
@@ -276,4 +277,17 @@ layer     filters    size              input                output
 * car: 78%
 * car: 100%
 * car: 66%
+
+Reference-style: 
+![alt text][input]
+
+[input]: https://github.com/Nizam-007/DVIP_ICCV1_implementation/blob/main/model_predicted_images/input_foggy_traffic.jpg "Input Image"
+
+Reference-style: 
+![alt text][output]
+
+[output]: https://github.com/Nizam-007/DVIP_ICCV1_implementation/blob/main/model_predicted_images/predected_output_foggyTraffic.jpg "Predicted output image"
+
+
+
 
