@@ -1,5 +1,5 @@
 # DVIP_ICCV1_implementation
-This repository is for the course "Data Visualisation and Image Processing" course final project
+This repository is for the course "Data Visualisation and Image Processing" final project
 
 """
 Names of the Team members are 
@@ -15,7 +15,7 @@ Names of the Team members are
 
 
 # Method _ 1
-
+## Faster RCNN model trained on Pascal VOC dataset with ResNet-50/SSD/YOLO.
 
 ## Data Preperation
 * We used KITTI object 2D (http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=2d) for training YOLO -> we call it as  "SOURCE DOMAIN" 
@@ -69,44 +69,49 @@ For object detection, people often use a metric called mean average precision (m
 ## Quantitative results for YOLOv2
 The results of mAP for KITTI using original YOLOv2 with input resizing.
 
-Benchmark    Easy    Moderate    Hard
-Car    45.32%    28.42%    12.97%
-Pedestrian    18.34%    13.90%    9.81%
-Cyclist    8.71%    5.40%    3.02%
+| Benchmark  | Easy   | Moderate | Hard   |
+|------------|--------|----------|--------|
+| Car        | 45.32% | 28.42%   | 12.97% |
+| Pedestrian | 18.34% | 13.90%   | 9.81%  |
+| Cyclist    | 8.71%  | 5.40%    | 3.02%  |
 
 
 The results of mAP for KITTI using modified YOLOv2 without input resizing.
 
-Benchmark    Easy    Moderate    Hard
-Car    88.17%    78.70%    69.45%
-Pedestrian    60.44%    43.69%    43.06%
-Cyclist    55.00%    39.29%    32.58%
+| Benchmark  | Easy   | Moderate | Hard   |
+|------------|--------|----------|--------|
+| Car        | 88.17% | 78.70%   | 69.45% |
+| Pedestrian | 60.44% | 43.69%   | 43.06% |
+| Cyclist    | 55.00% | 39.29%   | 32.58% |
 
 
 Quantitative results for YOLOv3
 The results of mAP for KITTI using modified YOLOv3 without input resizing.
 
-Benchmark    Easy    Moderate    Hard
-Car    56.00%    36.23%    29.55%
-Pedestrian    29.98%    22.84%    22.21%
-Cyclist    9.09%    9.09%    9.09%
+| Benchmark  | Easy   | Moderate | Hard   |
+|------------|--------|----------|--------|
+| Car        | 56.00% | 36.23%   | 29.55% |
+| Pedestrian | 29.98% | 22.84%   | 22.21% |
+| Cyclist    | 9.09%  | 9.09%    | 9.09%  |
 
 Quantitative results for Faster R-CNN
 The results of mAP for KITTI using retrained Faster R-CNN.
 
-Benchmark    Easy    Moderate    Hard
-Car    84.81%    86.18%    78.03%
-Pedestrian    76.52%    59.98%    51.84%
-Cyclist    74.72%    56.83%    49.60%
+| Benchmark  | Easy   | Moderate | Hard   |
+|------------|--------|----------|--------|
+| Car        | 84.81% | 86.18%   | 78.03% |
+| Pedestrian | 76.52% | 59.98%   | 51.84% |
+| Cyclist    | 74.72% | 56.83%   | 49.60% |
 
 ## Execution time analysis
 we also analyze the execution time for the three models. YOLOv2 and YOLOv3 are claimed as real-time detection models so that for KITTI, they can finish object detection less than 40 ms per image. While YOLOv3 is a little bit slower than YOLOv2. However, Faster R-CNN is much slower than YOLO.
 
 
-Model    Inference Time (per frame)
-YOLOv2    15 ms
-YOLOv3    35 ms
-Faster R-CNN    2763 ms
+| Model        | Inference Time (per frame) |
+|--------------|----------------------------|
+| YOLOv2       | 15 ms                      |
+| YOLOv3       | 35 ms                      |
+| Faster R-CNN | 2763 ms                    |
 
 ## Conclusion
 We implemented three kinds of object detection models, i.e., YOLOv2, YOLOv3, and Faster R-CNN, on KITTI 2D object detection dataset.  During the implementation, we did the following:
@@ -129,18 +134,24 @@ We implemented three kinds of object detection models, i.e., YOLOv2, YOLOv3, and
 
 ### step1: Installing Darknet
 
+
+```python
+
 git clone https://github.com/pjreddie/darknet
 cd darknet
 make
 
+```
+
 ### Step2: Downloading pretrained weight
 
+```python
 wget https://pjreddie.com/media/files/yolov3.weights
-
+```
 ### Then run the detector
-
+```python
 ./darknet detect cfg/yolov3.cfg yolov3.weights data/foggy_image_traffic.jpg
-
+```
 
 ### Output
 
