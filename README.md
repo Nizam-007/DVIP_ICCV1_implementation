@@ -252,14 +252,17 @@ layer     filters    size              input                output
   104 conv    256  3 x 3 / 1    76 x  76 x 128   ->    76 x  76 x 256  3.407 BFLOPs
   105 conv    255  1 x 1 / 1    76 x  76 x 256   ->    76 x  76 x 255  0.754 BFLOPs
   106 yolo
-Loading weights from yolov3.weights...Done!
-data/foggy_image_traffic.jpg: Predicted in 7.476640 seconds.
-truck: 96%
-car: 99%
-car: 98%
-car: 96%
-car: 94%
-car: 78%
-car: 100%
-car: 66%
+  
+  
+  
+### Loading weights from yolov3.weights...Done!
+* data/foggy_image_traffic.jpg: Predicted in 7.476640 seconds.
+* truck: 96%
+* car: 99%
+* car: 98%
+* car: 96%
+* car: 94%
+* car: 78%
+* car: 100%
+* car: 66%
 
