@@ -177,5 +177,6 @@ Predicted_output_foggy_image:
 [output]: https://github.com/Nizam-007/DVIP_ICCV1_implementation/blob/main/model_predicted_images/predected_output_foggyTraffic.jpg "Predicted output image"
 
 
-
-
+ 
+![alt text][sample]
+[sample]: https://github.com/Nizam-007/DVIP_ICCV1_implementation/blob/main/model_predicted_images/Predicted_Images.png "sample output images"
